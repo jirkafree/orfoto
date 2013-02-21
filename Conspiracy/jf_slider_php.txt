@@ -1,0 +1,33 @@
+<!-- BEGIN FEATURED AREA -->
+<div id="featured-area">
+<div id="featured-area-inner" class="clearfix">
+
+<?php if(!is_paged()) { ?>
+	<?php query_posts('category_name=uvod&showposts=5'); ?>
+	<?php //JF 4.2.2013 bug solved query_posts('category_name=' . get_option('eted_featured_cat') . '&showposts=5'); ?>
+	
+	<div class="kwicks_container">
+		<ul class="kwicks">
+	
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	
+				<li id="kwick">
+					<a href="<?php the_permalink(); ?>">
+							<span class="slider">
+							<span class="sliderheading"><?php the_title(); ?></span>
+						</span>
+						<?php the_post_thumbnail( 'slider-image' ); ?>
+					</a>
+	  			</li>
+	
+		<?php endwhile; else: ?>
+		<?php endif; ?>
+	
+		</ul> <!-- end ul kwicks -->
+	</div> <!-- end kwicks_container -->
+	<?php wp_reset_query(); ?>
+	<?php } ?>
+    
+</div> <!-- end div #featured-area-inner -->
+</div> <!-- end div #featured-area -->
+<!-- END FEATURED AREA -->

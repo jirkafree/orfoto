@@ -1,0 +1,6 @@
+<div id="jf-nivoslider" >
+                <?php /* orfoto-widget */
+				if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Easy Nivo Slider') ) : ?>
+                <?php endif; ?>
+             <?php //echo do_shortcode('[nivo category="novinky" number=10 effect="boxRain" speed=300 pause=3500]'); ?>
+                </div>
